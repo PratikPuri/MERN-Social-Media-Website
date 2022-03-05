@@ -40,7 +40,6 @@ router.post( '/', auth, async (req, res) => {
         facebook: req.body.facebook && req.body.facebook !== '' ? normalize(req.body.facebook, { forceHttps: true }) : '',
         interests: Array.isArray(req.body.interests) ? req.body.interests : req.body.interests.split(',').map((interest) => ' ' + interest.trim()),
         company: req.body.company,
-        website: req.body.website && req.body.website !== '' ? normalize(req.body.website, { forceHttps: true }) : '',
         location: req.body.location,
         about: req.body.about,
         birthDate: req.body.birthDate,

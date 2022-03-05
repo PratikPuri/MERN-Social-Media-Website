@@ -9,11 +9,12 @@ import {PROFILE_ERROR,UPDATE_PROFILE,GET_PROFILES} from '../actions/types';
   
   function profileReducer(state = initialState, action) {
     const { type, payload } = action;
+    console.log("helo",action)
     switch (type) {
       case UPDATE_PROFILE:
         return {
           ...state,
-          profile: payload,
+          profiles: payload,
           loading: false
         };
       case GET_PROFILES:
@@ -27,7 +28,7 @@ import {PROFILE_ERROR,UPDATE_PROFILE,GET_PROFILES} from '../actions/types';
           ...state,
           error: payload,
           loading: false,
-          profile: null
+          profiles: null
         };
       default:
         return state;

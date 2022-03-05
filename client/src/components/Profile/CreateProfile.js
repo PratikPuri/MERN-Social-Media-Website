@@ -2,11 +2,10 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { Link, useMatch, useNavigate, Navigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createProfile, getCurrentProfile } from '../../actions/profile';
+import { createProfile} from '../../actions/profile';
 
 const initialState = {
   company: '',
-  website: '',
   location: '',
   interests: '',
   about: '',
@@ -18,9 +17,6 @@ const initialState = {
   birthDate: ''
 };
 
-
-
-// profile: { profile, loading },getCurrentProfile,
 const ProfileForm = ({createProfile,isAuthenticated }) => {
   
   const [formData, setFormData] = useState(initialState);
@@ -30,35 +26,8 @@ const ProfileForm = ({createProfile,isAuthenticated }) => {
   if (!isAuthenticated){
     return <Navigate to = '/'/>;
   }
-
-//   const creatingProfile = useMatch('/create-profile');
-
-
-//   useEffect(() => {
-//     // if there is no profile, attempt to fetch one
-//     if (!profile) getCurrentProfile();
-
-//     // if we finished loading and we do have a profile
-//     // then build our profileData
-//     if (!loading && profile) {
-//       const profileData = { ...initialState };
-//       for (const key in profile) {
-//         if (key in profileData) profileData[key] = profile[key];
-//       }
-//       for (const key in profile.social) {
-//         if (key in profileData) profileData[key] = profile.social[key];
-//       }
-//       // the skills may be an array from our API response
-//       if (Array.isArray(profileData.skills))
-//         profileData.skills = profileData.skills.join(', ');
-//       // set local state with the profileData
-//       setFormData(profileData);
-//     }
-//   }, [loading, getCurrentProfile, profile]);
-
   const {
     company,
-  website,
   location,
   interests,
   about,
@@ -90,25 +59,21 @@ const ProfileForm = ({createProfile,isAuthenticated }) => {
           <small className="form-text">Please enter your business name or your place of work</small>
         </div>
         <div className="form-group">
-          <input type="text" placeholder="Website" name="website" value={website} onChange={onChange} />
-          <small className="form-text"> Please enter your website details </small>
-        </div>
-        <div className="form-group">
           <input type="text" placeholder="Location" name="location" value={location} onChange={onChange} />
           <small className="form-text"> Please enter your present location </small>
         </div>
         <div className="form-group">
           <input type="text" placeholder="Interests" name="interests" value={interests} onChange={onChange} />
-          <small className="form-text"> Please enter comma separated values (eg. Football, Cycling, Painting) </small>
+          <small className="form-text"> Please enter upto 4 comma separated values (eg. Football, Cycling, Painting, Music) </small>
         </div>
         <div className="form-group">
           <textarea placeholder="A short bio of yourself" name="about" value={about} onChange={onChange}/>
           <small className="form-text">Tell us a little about yourself</small>
         </div>
-        {/* <div className="form-group">
-          <textarea placeholder="birthDate" name="birthDate" value={birthDate} onChange={onChange}/>
+        <div className="form-group">
+          <input placeholder="Date" type="text" onFocus={e=>e.target.type="date"} name="birthDate" value={birthDate} onChange={onChange}/>
           <small className="form-text">Please enter your birth date</small>
-        </div> */}
+        </div>
         <div className="form-group social-input">
             <i className="fab fa-twitter fa-2x" />
             <input type="text" placeholder="Twitter URL" name="twitter" value={twitter} onChange={onChange}/>
@@ -140,17 +105,11 @@ const ProfileForm = ({createProfile,isAuthenticated }) => {
 
 ProfileForm.propTypes = {
   createProfile: PropTypes.func.isRequired,
-//   getCurrentProfile: PropTypes.func.isRequired,
-//   profile: PropTypes.object.isRequired
 isAuthenticated: PropTypes.bool
 }
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
 })
-// const mapStateToProps = (state) => ({
-//   profile: state.profile
-// });
 
-// export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
 export default connect(mapStateToProps, { createProfile})(ProfileForm);
