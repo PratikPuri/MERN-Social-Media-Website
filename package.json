@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "first-app",
   "main": "server.js",
-  
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
@@ -23,7 +22,7 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
     "mongoose": "^6.2.3",
-    "normalize-url": "^7.0.3",
+    "normalize-url": "^6.1.0",
     "react-moment": "^1.1.1",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
