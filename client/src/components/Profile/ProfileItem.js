@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import formatDate from '../../utils/formatDate.js';
 
 const ProfileItem = ({
   profile: 
@@ -23,7 +24,7 @@ const ProfileItem = ({
       {company && <p><i class="fa-solid fa-briefcase"></i>{"   "}{company}</p>}
       {location && <p><i className="fa-solid fa-location-dot"></i>{"   "}{location}</p>}
         {about && <p><i className="fa-solid fa-address-card"></i>{"   "}{about}</p>}
-        {birthDate && <p><i class="fa-solid fa-cake-candles"></i>{"   "}{birthDate}</p>}
+        {birthDate && <p><i class="fa-solid fa-cake-candles"></i>{"   "}{formatDate(birthDate)}</p>}
       </div>
       <div className="item3">
       <ul>

@@ -23,7 +23,6 @@ const Login = ({ login,isAuthenticated }) => {
 
     if (isAuthenticated){
         return <Navigate to = '/home'/>;
-        // return <Navigate to = '/createProfile'/>;
     }
 
     return (<Fragment>

@@ -4,9 +4,13 @@ import { connect } from 'react-redux';
 import PostItem from './post/postItem';
 import PostForm from './post/postForm';
 import { getPosts } from '../actions/posts';
+import { Navigate } from 'react-router-dom';
 
-const Posts = ({ getPosts, post: { posts } }) => {
+const Posts = ({ getPosts, post: { posts }, isAuthenticated }) => {
   useEffect(() => {getPosts();}, [getPosts]);
+  if (!isAuthenticated){
+    return <Navigate to = '/'/>;
+  }
   return (
     <section className="container1">
       <p className="lead">
@@ -21,11 +25,13 @@ const Posts = ({ getPosts, post: { posts } }) => {
 
 Posts.propTypes = {
   getPosts: PropTypes.func.isRequired,
-  post: PropTypes.object.isRequired
+  post: PropTypes.object.isRequired,
+  isAuthenticated: PropTypes.bool
 };
 
 const mapStateToProps = (state) => ({
-  post: state.post
+  post: state.post,
+  isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(mapStateToProps, { getPosts })(Posts);

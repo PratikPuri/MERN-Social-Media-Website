@@ -14,7 +14,7 @@ const Profiles = ({getProfiles , isAuthenticated, profiles:{profiles,loading}}) 
 console.log("got them");
   console.log(profiles);
   return (
-    <section className="container">
+    <section className="container-1">
         <Fragment>
           <h1 className="large text-primary">Profiles</h1>
           <p className="lead">
