@@ -14,9 +14,8 @@ Open terminal in administrator mode and execute the following commands to run th
 
 1. mkdir MERNSocialMediaWebsite
 2. cd MERNSocialMediaWebsite
-3. git pull git@github.com:PratikPuri/MERN-Social-Media-Website.git
-4. git init
-5. git pull https://github.com/PratikPuri/MERN-Social-Media-Website.git
-6. npm set audit false
-7. npm install
-8. npm start dev
+3. git init
+4. git pull https://github.com/PratikPuri/MERN-Social-Media-Website.git
+5. npm set audit false
+6. npm install
+7. npm start dev
