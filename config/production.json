@@ -1,4 +1,0 @@
-{
-    "mongoURI": "mongodb://pratik:pratik123@cluster0-shard-00-00.8wmde.mongodb.net:27017,cluster0-shard-00-01.8wmde.mongodb.net:27017,cluster0-shard-00-02.8wmde.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-psq6rk-shard-0&authSource=admin&retryWrites=true&w=majority",
-    "jwtSecret": "demoSecret"
-}
