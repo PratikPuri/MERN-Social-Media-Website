@@ -1,6 +1,5 @@
 import axios from 'axios'; 
 import { REGISTER_SUCCESS, REGISTER_FAIL, USER_LOADED, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT} from "./types";
-import {v4 as uuid} from 'uuid';
 import { setAlert } from './alert';
 import setAuthToken from '../utils/setAuthToken';
 

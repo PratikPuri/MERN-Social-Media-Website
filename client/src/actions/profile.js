@@ -1,11 +1,6 @@
 import axios from 'axios'; 
 import { setAlert } from './alert';
-import {GET_PROFILES,
-  UPDATE_PROFILE,
-  ACCOUNT_DELETED,
-  GET_REPOS,
-  NO_REPOS
-} from './types';
+import { GET_PROFILES } from './types';
 
 export const getProfiles = () => async dispatch => {
     try {
