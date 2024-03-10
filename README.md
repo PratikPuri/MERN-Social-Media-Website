@@ -1,6 +1,6 @@
-This repository holds a social media website I created using the MERN stack.
+MERN Stack Social Media Website
 ---
-Here are the screenshots of different pages within the website:
+This repository holds the code for a social media website that I created using MERN stack. Here are the screenshots of different pages within the website:
 
 ![Home Page](https://github.com/PratikPuri/MERN-Social-Media-Website/blob/master/client/src/img/Screenshot1.jpg)
 ![Login Page](https://github.com/PratikPuri/MERN-Social-Media-Website/blob/master/client/src/img/Screenshot2.jpg)
@@ -10,7 +10,9 @@ Here are the screenshots of different pages within the website:
 ![Edit profile page](https://github.com/PratikPuri/MERN-Social-Media-Website/blob/master/client/src/img/Screenshot6.jpg)
 
 ---
-Open terminal in administrator mode and execute the following commands to run the social media website on your local system:
+Steps to run website on local system
+---
+Open terminal in administrator mode and execute the following commands to run the social media website locally:
 
 1. mkdir MERNSocialMediaWebsite
 2. cd MERNSocialMediaWebsite
